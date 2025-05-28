@@ -33,12 +33,9 @@ public class Flashcard {
         this.resposta = resposta ;
     }
     
-    //p/ ID_FLASHCARD:
+    //p/ ID_FLASHCARD: 
     public String getId_flashcard(){
         return this.id_flashcard ;
-    }
-    public void setId_flashcard(String id_flashcard){
-        this.id_flashcard = id_flashcard ;
     }
     //p/ DIFICULDADE:
     public String getDificuldade(){
@@ -77,3 +74,4 @@ public class Flashcard {
                 ", DIFICULDADE: " + dificuldade + ")" ; 
     }
 }
+
