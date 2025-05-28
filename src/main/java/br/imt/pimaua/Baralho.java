@@ -31,9 +31,6 @@ public class Baralho {
     public String getId_baralho(){
         return this.id_baralho ;
     }
-    public void setId_baralho(String id_baralho){
-        this.id_baralho = id_baralho ;
-    }
     //p/ NOME:
     public String getNome(){
         return this.nome ;
@@ -51,9 +48,6 @@ public class Baralho {
     //p/ AUTOR:
     public String getAutor(){
         return this.autor ;
-    }
-    public void setAutor(String autor){
-        this.autor = autor ;
     }
     
     public Flashcard getFlashcard(int index) {
