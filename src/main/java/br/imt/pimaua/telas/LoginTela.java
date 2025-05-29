@@ -1,12 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package br.imt.pimaua.telas;
+ 
+
 /**
  *
  * @author Ian
  */
+package br.imt.pimaua.telas;
+import javax.swing.JOptionPane;
+import br.imt.pimaua.persistencia.UsuarioDAO;
+import br.imt.pimaua.telas.CriarUsuarioTela;
+import br.imt.pimaua.telas.ModoDeJogoTela;
+
+
 public class LoginTela extends javax.swing.JFrame {
 
     /**
@@ -33,6 +40,8 @@ public class LoginTela extends javax.swing.JFrame {
         senhaPasswordField = new javax.swing.JPasswordField();
         entrarButton = new javax.swing.JButton();
         criarContaButton = new javax.swing.JButton();
+        emailLabel = new javax.swing.JLabel();
+        senhaLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,7 +49,6 @@ public class LoginTela extends javax.swing.JFrame {
 
         azulPanel.setBackground(new java.awt.Color(30, 180, 195));
 
-        emailTextField.setText("digite seu email");
         emailTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,7 +56,6 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
 
-        senhaPasswordField.setText("jPasswordField1");
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         senhaPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,31 +81,46 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
 
+        emailLabel.setForeground(new java.awt.Color(255, 255, 255));
+        emailLabel.setText("EMAIL");
+        emailLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        senhaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        senhaLabel.setText("SENHA");
+        senhaLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout azulPanelLayout = new javax.swing.GroupLayout(azulPanel);
         azulPanel.setLayout(azulPanelLayout);
         azulPanelLayout.setHorizontalGroup(
             azulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(azulPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(azulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(entrarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(senhaPasswordField)
-                    .addComponent(criarContaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, azulPanelLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(azulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(azulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(criarContaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(senhaLabel)
+                    .addComponent(emailLabel))
+                .addGap(35, 35, 35))
         );
         azulPanelLayout.setVerticalGroup(
             azulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(azulPanelLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(emailLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(senhaLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(criarContaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(criarContaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout fundoPanelLayout = new javax.swing.GroupLayout(fundoPanel);
@@ -106,26 +128,31 @@ public class LoginTela extends javax.swing.JFrame {
         fundoPanelLayout.setHorizontalGroup(
             fundoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fundoPanelLayout.createSequentialGroup()
-                .addGap(244, 244, 244)
+                .addGap(304, 304, 304)
                 .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(301, Short.MAX_VALUE))
         );
         fundoPanelLayout.setVerticalGroup(
             fundoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fundoPanelLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fundoPanelLayout.createSequentialGroup()
+                .addContainerGap(184, Short.MAX_VALUE)
+                .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fundoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fundoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fundoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fundoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,25 +160,58 @@ public class LoginTela extends javax.swing.JFrame {
 
     private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
         // TODO add your handling code here:
-        String email = emailTextField.getText();
-
+        senhaPasswordField.requestFocusInWindow();
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void senhaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaPasswordFieldActionPerformed
         // TODO add your handling code here:
-        char[] senha = senhaPasswordField.getPassword();
+        entrarButton.doClick();
     }//GEN-LAST:event_senhaPasswordFieldActionPerformed
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
-        this.setVisible(false);
-        InicioTela inicio = new InicioTela();
-        inicio.setVisible(true);
+        try {
+         
+        String email = emailTextField.getText().trim();
+        String senhaStr = new String(senhaPasswordField.getPassword()).trim();
+
+  
+        if (email.isEmpty() || senhaStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.");
+            return;
+        }
+
+        
+        int senha = Integer.parseInt(senhaStr);
+
+      
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        boolean autenticado = usuarioDAO.autenticar(email, senha);
+
+       
+        if (autenticado) {
+         
+            this.setVisible(false);
+            ModoDeJogoTela modoDeJogoTela = new ModoDeJogoTela();
+            modoDeJogoTela.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
+        }
+
+    } catch (NumberFormatException e) {
+       
+        JOptionPane.showMessageDialog(this, "A senha deve conter apenas números.");
+    } catch (Exception e) {
+     
+        JOptionPane.showMessageDialog(this, "Erro ao autenticar: " + e.getMessage());
+    }
+        
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     private void criarContaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarContaButtonActionPerformed
         this.setVisible(false);
         CriarUsuarioTela criarUsuario = new CriarUsuarioTela();
         criarUsuario.setVisible(true);
+        
     }//GEN-LAST:event_criarContaButtonActionPerformed
 
     /**
@@ -192,10 +252,12 @@ public class LoginTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel azulPanel;
     private javax.swing.JButton criarContaButton;
+    private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton entrarButton;
     private javax.swing.JPanel fundoPanel;
     private javax.swing.ButtonGroup loginbuttonGroup;
+    private javax.swing.JLabel senhaLabel;
     private javax.swing.JPasswordField senhaPasswordField;
     // End of variables declaration//GEN-END:variables
 }

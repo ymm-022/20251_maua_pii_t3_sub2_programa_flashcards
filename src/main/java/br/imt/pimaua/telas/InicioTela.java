@@ -31,6 +31,7 @@ public class InicioTela extends javax.swing.JFrame {
         modoDeJogoButton = new javax.swing.JButton();
         bibliotecaFlashCardButton = new javax.swing.JButton();
         criarFlashCardButton = new javax.swing.JButton();
+        voltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,15 @@ public class InicioTela extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
+        voltarButton.setBackground(new java.awt.Color(30, 180, 195));
+        voltarButton.setText("voltar");
+        voltarButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,11 +103,15 @@ public class InicioTela extends javax.swing.JFrame {
                 .addGap(222, 222, 222)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(221, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -129,6 +143,10 @@ public class InicioTela extends javax.swing.JFrame {
     private void criarFlashCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarFlashCardButtonActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_criarFlashCardButtonActionPerformed
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        this.setVisible(false); 
+    }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,5 +189,6 @@ public class InicioTela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton modoDeJogoButton;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
