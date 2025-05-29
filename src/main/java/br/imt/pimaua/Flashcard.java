@@ -73,5 +73,11 @@ public class Flashcard {
                 ", RESPOSTA: " + resposta + 
                 ", DIFICULDADE: " + dificuldade + ")" ; 
     }
+
+    public void setId_flashcard(String id_flashcard) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
 }
 

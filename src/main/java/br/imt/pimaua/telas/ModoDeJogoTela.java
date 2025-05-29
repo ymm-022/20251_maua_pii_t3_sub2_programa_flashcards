@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.imt.pimaua.telas;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Ian
  */
 public class ModoDeJogoTela extends javax.swing.JFrame {
-
     /**
      * Creates new form ModoDeJogoTela
      */
@@ -31,7 +31,7 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
         TituloLabel = new javax.swing.JLabel();
         AleatorioButton = new javax.swing.JButton();
         PorMateriaButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        DesafioButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 198, 75));
@@ -55,7 +55,12 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
 
         PorMateriaButton.setText("Modo por matéria");
 
-        jButton3.setText("Modo desafio");
+        DesafioButton.setText("Modo desafio");
+        DesafioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesafioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AzulPanelLayout = new javax.swing.GroupLayout(AzulPanel);
         AzulPanel.setLayout(AzulPanelLayout);
@@ -66,7 +71,7 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
                 .addGroup(AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PorMateriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AleatorioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DesafioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AzulPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -83,7 +88,7 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PorMateriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(DesafioButton)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -119,50 +124,57 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AleatorioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AleatorioButtonActionPerformed
-        // TODO add your handling code here:
+           //new JogoTela("Aleatório").setVisible(true);
+        dispose();
+    this.setVisible(false);
+   
+    // Aquivocê pode abrir uma tela de jogo com esse modo
+    // Exemplo: new JogoTela("aleatorio").setVisible(true);
+    // dispose();
+
+
     }//GEN-LAST:event_AleatorioButtonActionPerformed
 
+    private void DesafioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesafioButtonActionPerformed
+       
+        new ModoDesafioaTela().setVisible(true); // Abre a tela
+        dispose(); // Fecha a atual
+        this.setVisible(false);
+        ModoDesafioaTela Desafio = new ModoDesafioaTela();
+        Desafio.setVisible(true);
+
+
+  
+    }//GEN-LAST:event_DesafioButtonActionPerformed
+
     /**
-     * @param args the command line arguments
+     * @param the command line arguments6
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ModoDeJogoTela().setVisible(true);
-            }
-        });
+//       try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (Exception ex) {
+//            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new ModoDeJogoTela().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AleatorioButton;
     private javax.swing.JPanel AmareloPanel;
     private javax.swing.JPanel AzulPanel;
+    private javax.swing.JButton DesafioButton;
     private javax.swing.JButton PorMateriaButton;
     private javax.swing.JLabel TituloLabel;
-    private javax.swing.JButton jButton3;
     // End of variables declaration//GEN-END:variables
 }
