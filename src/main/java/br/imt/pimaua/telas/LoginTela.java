@@ -106,15 +106,16 @@ public class LoginTela extends javax.swing.JFrame {
         fundoPanelLayout.setHorizontalGroup(
             fundoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fundoPanelLayout.createSequentialGroup()
-                .addGap(244, 244, 244)
+                .addGap(243, 243, 243)
                 .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         fundoPanelLayout.setVerticalGroup(
             fundoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fundoPanelLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fundoPanelLayout.createSequentialGroup()
+                .addContainerGap(107, Short.MAX_VALUE)
+                .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,7 +145,7 @@ public class LoginTela extends javax.swing.JFrame {
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
         this.setVisible(false);
-        InicioTela inicio = new InicioTela();
+        MenuTela inicio = new MenuTela();
         inicio.setVisible(true);
     }//GEN-LAST:event_entrarButtonActionPerformed
 
