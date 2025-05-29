@@ -5,14 +5,14 @@ public class Flashcard {
     //Atributos da classe.
     private String pergunta ;
     private String resposta ;
-    private String id_flashcard ;
+    private String idflashcard ;
     private String dificuldade ;
  
     //Construtor da classe.
-    public Flashcard(String pergunta, String resposta, String id_flashcard, String dificuldade){
+    public Flashcard(String pergunta, String resposta, String idflashcard, String dificuldade){
         this.pergunta = pergunta ;
         this.resposta = resposta ;
-        this.id_flashcard = id_flashcard ;   
+        this.idflashcard = idflashcard ;   
         this.dificuldade = dificuldade ;
     }
     
@@ -34,8 +34,8 @@ public class Flashcard {
     }
     
     //p/ ID_FLASHCARD: 
-    public String getId_flashcard(){
-        return this.id_flashcard ;
+    public String getIdflashcard(){
+        return this.idflashcard ;
     }
     //p/ DIFICULDADE:
     public String getDificuldade(){
@@ -48,7 +48,7 @@ public class Flashcard {
     //Metodos da classe:
     //Mostra a pergunta:
     public String mostrarPergunta(){
-        return "QUESTÃO: " + id_flashcard + " " + pergunta ;
+        return "QUESTÃO: " + idflashcard + " " + pergunta ;
     }
     //Mostra  resposta:
     public String mostrarResposta(){
@@ -60,7 +60,7 @@ public class Flashcard {
     public boolean equals(Object objeto) {
         if(objeto.getClass().equals(this.getClass())){  //A funcao equals() e utilizada para comparar objetos.
             Flashcard flashcard = (Flashcard) objeto; //Casting: convertemos o parametro objeto de tipo Objeto para o tipo Flashcard.
-            return this.id_flashcard == flashcard.getId_flashcard() ; //Compara o ID do objeto atual com o objeto passado como parametro.
+            return this.idflashcard.equals(flashcard.getIdflashcard()) ; //Compara o ID do objeto atual com o objeto passado como parametro.
         } else {
             return false;
         }
@@ -68,7 +68,7 @@ public class Flashcard {
     
     @Override
     public String toString(){ //O metodo toString() serve para obter uma representação em string de um objeto, facilitando a exibição de informações.
-        return "FLASHCARD: (" + "ID: " + id_flashcard + 
+        return "FLASHCARD: (" + "ID: " + idflashcard + 
                 ", PERGUNTA: " + pergunta + 
                 ", RESPOSTA: " + resposta + 
                 ", DIFICULDADE: " + dificuldade + ")" ; 

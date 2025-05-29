@@ -7,70 +7,66 @@ import org.junit.Test ;
 public class FlashcardTeste {
     @Test
     public void getId_flashcard(){
-        String id_flashcard = "1" ;
+        String idflashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
-        Flashcard flashcard = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
+        Flashcard flashcard = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;
         
-        flashcard.setId_flashcard(id_flashcard) ;
-        
-        assert(flashcard.getId_flashcard().equals("1")) ;
+        assert(flashcard.getIdflashcard().equals("1")) ;
     }
     
     @Test
     public void getPergunta(){
-        String id_flashcard = "1" ;
+        String idflashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
-        Flashcard flashcard = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
+        Flashcard flashcard = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;
         
         flashcard.setPergunta(pergunta) ;
         
-        assert(flashcard.getPerguta() == "pergunta") ;
+        assert("pergunta".equals(flashcard.getPerguta())) ;
     }
     
     @Test
     public void getResposta(){
-        String id_flashcard = "1" ;
+        String idflashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
-        Flashcard flashcard = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
+        Flashcard flashcard = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;
         
         flashcard.setResposta(resposta) ;
         
-        assert(flashcard.getResposta() == "resposta") ;
+        assert("resposta".equals(flashcard.getResposta())) ;
     }
     
     @Test
     public void testEquals(){
-        String id_flashcard = "1" ;
+        String idflashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
-        Flashcard flashcard1 = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
-        Flashcard flashcard2 = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
-        
-        flashcard1.setId_flashcard(id_flashcard) ;
+        Flashcard flashcard1 = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;
+        Flashcard flashcard2 = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;
         
         assert(flashcard1 == flashcard2) ;
     }
     
     @Test 
     public void testEqualsFalse(){
-        String id_flashcard1 = "1" ;
+        String idflashcard1 = "1" ;
         var pergunta1 = "pergunta" ;
         var resposta1 = "resposta" ;
         var dificuldade1 = "dificuldade" ;
-        Flashcard flashcard1 = new Flashcard(id_flashcard1, pergunta1, resposta1, dificuldade1) ;
+        Flashcard flashcard1 = new Flashcard(idflashcard1, pergunta1, resposta1, dificuldade1) ;
         
-        String id_flashcard2 = "2" ;
+        String idflashcard2 = "2" ;
         var pergunta2 = "perguntas" ;
         var resposta2 = "respostas" ;
         var dificuldade2 = "dificuldades" ;
-        Flashcard flashcard2 = new Flashcard(id_flashcard2, pergunta2, resposta2, dificuldade2) ;
+        Flashcard flashcard2 = new Flashcard(idflashcard2, pergunta2, resposta2, dificuldade2) ;
         
         boolean flashcardE = flashcard1.equals(flashcard2) ;
         
@@ -79,11 +75,11 @@ public class FlashcardTeste {
     
     @Test 
     public void testEqualsFalseObject(){
-        String id_flashcard = "1" ;
+        String idflashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
-        Flashcard flashcard = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;   
+        Flashcard flashcard = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;   
         
         Object obj = new Object() ;
         
