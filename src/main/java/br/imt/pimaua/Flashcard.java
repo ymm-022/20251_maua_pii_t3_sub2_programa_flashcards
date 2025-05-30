@@ -18,7 +18,7 @@ public class Flashcard {
     
     //Getters / Setters.
     //p/ PERGUNTA:
-    public String getPerguta(){
+    public String getPergunta(){
         return this.pergunta ;
     }
     public void setPergunta(String pergunta){
@@ -58,12 +58,15 @@ public class Flashcard {
     //Helpers (metodos que ajudam na organizacao nos codigos de testes).
     @Override //O @Override garante que voce esta sobrescrevendo um metodo e nao criando um completamente novo.
     public boolean equals(Object objeto) {
-        if(objeto.getClass().equals(this.getClass())){  //A funcao equals() e utilizada para comparar objetos.
-            Flashcard flashcard = (Flashcard) objeto; //Casting: convertemos o parametro objeto de tipo Objeto para o tipo Flashcard.
-            return this.idflashcard.equals(flashcard.getIdflashcard()) ; //Compara o ID do objeto atual com o objeto passado como parametro.
-        } else {
-            return false;
-        }
+        if (this == objeto) return true;
+        if (objeto == null || getClass() != objeto.getClass()) return false;
+        Flashcard flashcard = (Flashcard) objeto;
+    return this.idflashcard == flashcard.getIdflashcard();
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(idflashcard);
     }
     
     @Override
