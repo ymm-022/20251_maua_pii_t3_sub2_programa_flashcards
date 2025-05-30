@@ -11,7 +11,6 @@ public class Baralho {
     private String nome ;
     private String materia ;
     private List<Flashcard> flashcards ;
-    private String autor ;
     
     //Construtores da classe.
     //PADRAO:
@@ -21,11 +20,10 @@ public class Baralho {
     }
 
     //COM ATRIBUTOS:
-    public Baralho(int idbaralho, String nome, String materia, String autor){
+    public Baralho(int idbaralho, String nome, String materia){
         this.idbaralho = idbaralho ;
         this.nome = nome ;
-        this.materia = materia ;
-        this.autor = autor ;   
+        this.materia = materia ;   
         this.flashcards = new ArrayList<>();
     }
 
@@ -48,10 +46,6 @@ public class Baralho {
     }
     public void setMateria(String materia){
         this.materia = materia ;
-    }
-    //p/ AUTOR:
-    public String getAutor(){
-        return this.autor ;
     }
     
     public Flashcard getFlashcard(int index) {
@@ -79,8 +73,7 @@ public class Baralho {
     public String toString() { //O metodo toString() serve para obter uma representação em string de um objeto, facilitando a exibição de informações.
         return "BARALHO: (" + "ID: " + idbaralho +
                 ", NOME: " + nome +  
-                ", MATERIA: " + materia +
-                ", AUTOR: " + autor + ")" ;
+                ", MATERIA: " + materia + ")" ;
     }
     public String mostrarDetalhes() {
         StringBuilder sb = new StringBuilder(); //O StringBuilder facilita a exibição de informacoes, evitando criar objetos desnecsessários.
@@ -88,7 +81,6 @@ public class Baralho {
         sb.append("ID: ").append(idbaralho).append("\n");
         sb.append("Nome: ").append(nome).append("\n");
         sb.append("Matéria: ").append(materia).append("\n");
-        sb.append("Autor: ").append(autor).append("\n");
         
         if (!flashcards.isEmpty()) { //Validacao condicional para evitar que o programa exiba uma seção vazia.
             sb.append("\n=== FLASHCARDS ===\n");
