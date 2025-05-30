@@ -1,17 +1,34 @@
 
 package br.imt.pimaua.telas;
 
-/**
- *
- * @author 25.00881-4
- */
-public class CriarBaralhoTela extends javax.swing.JFrame {
+//import br.imt.pimaua.Baralho ; // Aqui precisa ter a classe Baralho
+import br.imt.pimaua.persistencia.UsuarioDAO; // Aqui precisa ter a classe DAO
+import javax.swing.JOptionPane ;
+import javax.swing.DefaultComboBoxModel ;
 
+public class CriarBaralhoTela extends javax.swing.JFrame {
+    private void obterBaralhos(){
+        try{
+            var dao = new UsuarioDAO() ; // Aqui precisa ter o arquivo DAO no projeto.
+            var baralhos = dao.obterBaralhos() ;
+            baralhosComboBox.setModel(
+                 // new DefaultComboBoxModel<Baralho>(baralhos.toArray(new Baralho[]{}))
+            ) ;
+        }
+        catch(Exception e){
+            e.printStackTrace() ;
+            JOptionPane.showMessageDialog(null, "Lista de baralhos indisponível");
+        }
+    }
     /**
      * Creates new form CriarBaralhoTela
      */
     public CriarBaralhoTela() {
+        super("Programa de Flashcards") ;
         initComponents();
+        setLocationRelativeTo(null);
+        obterBaralhos() ;
+        
     }
 
     /**
@@ -25,7 +42,7 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        selecionarBaralhoComboBox = new javax.swing.JComboBox<>();
+        baralhosComboBox = new javax.swing.JComboBox<>();
         criarBaralhoButton = new javax.swing.JButton();
         nomeBaralhoTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -37,11 +54,10 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(30, 180, 195));
 
-        selecionarBaralhoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baralho A", "Baralho B", "Baralho C", "Baralho D" }));
-        selecionarBaralhoComboBox.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        selecionarBaralhoComboBox.addActionListener(new java.awt.event.ActionListener() {
+        baralhosComboBox.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        baralhosComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selecionarBaralhoComboBoxActionPerformed(evt);
+                baralhosComboBoxActionPerformed(evt);
             }
         });
 
@@ -78,7 +94,7 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(selecionarBaralhoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(baralhosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(criarBaralhoButton)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -91,7 +107,7 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(selecionarBaralhoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(baralhosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
@@ -132,9 +148,9 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selecionarBaralhoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarBaralhoComboBoxActionPerformed
+    private void baralhosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baralhosComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_selecionarBaralhoComboBoxActionPerformed
+    }//GEN-LAST:event_baralhosComboBoxActionPerformed
 
     private void criarBaralhoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarBaralhoButtonActionPerformed
         // TODO add your handling code here:
@@ -184,12 +200,12 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<Baralho> baralhosComboBox;
     private javax.swing.JButton criarBaralhoButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nomeBaralhoTextField;
-    private javax.swing.JComboBox<String> selecionarBaralhoComboBox;
     // End of variables declaration//GEN-END:variables
 }
