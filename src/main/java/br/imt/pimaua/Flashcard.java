@@ -5,11 +5,11 @@ public class Flashcard {
     //Atributos da classe.
     private String pergunta ;
     private String resposta ;
-    private String idflashcard ;
+    private int idflashcard ;
     private String dificuldade ;
  
     //Construtor da classe.
-    public Flashcard(String pergunta, String resposta, String idflashcard, String dificuldade){
+    public Flashcard(String pergunta, String resposta, int idflashcard, String dificuldade){
         this.pergunta = pergunta ;
         this.resposta = resposta ;
         this.idflashcard = idflashcard ;   
@@ -34,7 +34,7 @@ public class Flashcard {
     }
     
     //p/ ID_FLASHCARD: 
-    public String getIdflashcard(){
+    public int getIdflashcard(){
         return this.idflashcard ;
     }
     //p/ DIFICULDADE:
