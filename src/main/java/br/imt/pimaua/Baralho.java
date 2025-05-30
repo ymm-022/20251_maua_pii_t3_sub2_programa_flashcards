@@ -7,7 +7,7 @@ import java.util.List ;
 
 public class Baralho {
     //Atributos da classe.
-    private String idbaralho ;
+    private int idbaralho ;
     private String nome ;
     private String materia ;
     private List<Flashcard> flashcards ;
@@ -21,21 +21,18 @@ public class Baralho {
     }
 
     //COM ATRIBUTOS:
-    public Baralho(String idbaralho, String nome, String materia, String autor){
+    public Baralho(int idbaralho, String nome, String materia, String autor){
         this.idbaralho = idbaralho ;
         this.nome = nome ;
         this.materia = materia ;
-        this.autor = autor ;                   
+        this.autor = autor ;   
+        this.flashcards = new ArrayList<>();
     }
 
-    public Baralho(List<Flashcard> listaflashcards) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-        
     // Getters / Setters
     //p/ ID_BARALHO:
 
-    public String getIdbaralho(){
+    public int getIdbaralho(){
         return this.idbaralho ;
     }
     //p/ NOME:
@@ -75,9 +72,6 @@ public class Baralho {
         }
     }
     public int getTamanho(){
-        if(flashcards != null){
-            this.flashcards.size() ;
-        }
         return flashcards.size() ;
     }
     
