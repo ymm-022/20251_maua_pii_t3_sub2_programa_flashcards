@@ -5,6 +5,7 @@
 package br.imt.pimaua.telas;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Ian
@@ -15,6 +16,7 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
      */
     public ModoDeJogoTela() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -32,6 +34,7 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
         AleatorioButton = new javax.swing.JButton();
         PorMateriaButton = new javax.swing.JButton();
         DesafioButton = new javax.swing.JButton();
+        VoltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 198, 75));
@@ -92,6 +95,15 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        VoltarButton.setBackground(new java.awt.Color(255, 198, 75));
+        VoltarButton.setText("Voltar");
+        VoltarButton.setBorderPainted(false);
+        VoltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AmareloPanelLayout = new javax.swing.GroupLayout(AmareloPanel);
         AmareloPanel.setLayout(AmareloPanelLayout);
         AmareloPanelLayout.setHorizontalGroup(
@@ -100,11 +112,16 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(AzulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
+            .addGroup(AmareloPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AmareloPanelLayout.setVerticalGroup(
             AmareloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AmareloPanelLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(VoltarButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(AzulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -144,29 +161,37 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
         Desafio.setVisible(true);
 
 
+        
   
     }//GEN-LAST:event_DesafioButtonActionPerformed
 
+    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+        this.setVisible(false);
+        //nome tela //crio variavel 
+         //inicio = new//nome tela()
+         //inicio.setVisible(true)// TODO add your handling code here:
+    }//GEN-LAST:event_VoltarButtonActionPerformed
+
     /**
-     * @param the command line arguments6
+     * @param args
      */
     public static void main(String args[]) {
-//       try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (Exception ex) {
-//            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ModoDeJogoTela().setVisible(true);
-//            }
-//        });
+       try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ModoDeJogoTela().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -176,5 +201,6 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
     private javax.swing.JButton DesafioButton;
     private javax.swing.JButton PorMateriaButton;
     private javax.swing.JLabel TituloLabel;
+    private javax.swing.JButton VoltarButton;
     // End of variables declaration//GEN-END:variables
 }
