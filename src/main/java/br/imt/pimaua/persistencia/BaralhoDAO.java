@@ -10,7 +10,7 @@ public class BaralhoDAO {
         var baralhos = new ArrayList<Baralho>();
         var sql = "SELECT * FROM Baralho";
         try(
-            var conexao = new br.imt.pimaua.ConnectionFactory().obterConexao();
+            var conexao = new br.imt.pimaua.persistencia.ConnectionFactory().obterConexao();
             var ps = conexao.prepareStatement(sql);
             var rs = ps.executeQuery();
         ){
@@ -28,7 +28,7 @@ public class BaralhoDAO {
         var sql = "INSERT INTO Baralho (id_baralho, nome_baralho) VALUES (?, ?)\nINSERT INTO Materia (nome_materia) VALUES (?)";
 
         try (
-            var conexao = new br.imt.pimaua.ConnectionFactory().obterConexao();
+            var conexao = new br.imt.pimaua.persistencia.ConnectionFactory().obterConexao();
             var ps = conexao.prepareStatement(sql);
         ) {
             ps.setInt(1, baralho.getIdbaralho());

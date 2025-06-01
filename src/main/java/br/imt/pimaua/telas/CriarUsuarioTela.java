@@ -4,6 +4,10 @@
  */
 package br.imt.pimaua.telas;
 
+import br.imt.pimaua.Usuario;
+import br.imt.pimaua.persistencia.ConnectionFactory ;
+import br.imt.pimaua.persistencia.UsuarioDAO;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Ian
@@ -138,7 +142,24 @@ public class CriarUsuarioTela extends javax.swing.JFrame {
         char[] senha = senhaPasswordField.getPassword();
     }//GEN-LAST:event_senhaPasswordFieldActionPerformed
 
-    private void criarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarButtonActionPerformed
+    private void criarButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        String nome_usuario = nomeTextField.getText();
+        String email_usuario = emailTextField.getText();
+        char[] senhaChars = senhaPasswordField.getPassword();
+        String senhaStr = new String(senhaChars);
+        int senha_usuario = Integer.parseInt(senhaStr);
+
+        
+        var usuario = new Usuario(nome_usuario, email_usuario, senha_usuario);
+        try{
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.cadastrar(usuario);
+            
+        } catch (Exception e){
+            
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: ");
+        }
+//GEN-FIRST:event_criarButtonActionPerformed
         this.setVisible(false);
         LoginTela login = new LoginTela();
         login.setVisible(true);

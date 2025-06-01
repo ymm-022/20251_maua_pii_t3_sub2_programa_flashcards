@@ -5,20 +5,24 @@ public class Flashcard {
     //Atributos da classe.
     private String pergunta ;
     private String resposta ;
-    private int idflashcard ;
+    private String id_flashcard ;
     private String dificuldade ;
  
     //Construtor da classe.
-    public Flashcard(String pergunta, String resposta, int idflashcard, String dificuldade){
+    public Flashcard(String pergunta, String resposta, String id_flashcard, String dificuldade){
         this.pergunta = pergunta ;
         this.resposta = resposta ;
-        this.idflashcard = idflashcard ;   
+        this.id_flashcard = id_flashcard ;   
         this.dificuldade = dificuldade ;
+    }
+
+    public Flashcard(String pergunta, String resposta, int idFlashcard, String dificuldade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     //Getters / Setters.
     //p/ PERGUNTA:
-    public String getPergunta(){
+    public String getPerguta(){
         return this.pergunta ;
     }
     public void setPergunta(String pergunta){
@@ -34,8 +38,8 @@ public class Flashcard {
     }
     
     //p/ ID_FLASHCARD: 
-    public int getIdflashcard(){
-        return this.idflashcard ;
+    public String getId_flashcard(){
+        return this.id_flashcard ;
     }
     //p/ DIFICULDADE:
     public String getDificuldade(){
@@ -48,7 +52,7 @@ public class Flashcard {
     //Metodos da classe:
     //Mostra a pergunta:
     public String mostrarPergunta(){
-        return "QUESTÃO: " + idflashcard + " " + pergunta ;
+        return "QUESTÃO: " + id_flashcard + " " + pergunta ;
     }
     //Mostra  resposta:
     public String mostrarResposta(){
@@ -58,23 +62,32 @@ public class Flashcard {
     //Helpers (metodos que ajudam na organizacao nos codigos de testes).
     @Override //O @Override garante que voce esta sobrescrevendo um metodo e nao criando um completamente novo.
     public boolean equals(Object objeto) {
-        if (this == objeto) return true;
-        if (objeto == null || getClass() != objeto.getClass()) return false;
-        Flashcard flashcard = (Flashcard) objeto;
-    return this.idflashcard == flashcard.getIdflashcard();
-    }
-
-    @Override
-    public int hashCode() {
-        return Integer.hashCode(idflashcard);
+        if(objeto.getClass().equals(this.getClass())){  //A funcao equals() e utilizada para comparar objetos.
+            Flashcard flashcard = (Flashcard) objeto; //Casting: convertemos o parametro objeto de tipo Objeto para o tipo Flashcard.
+            return this.id_flashcard == flashcard.getId_flashcard() ; //Compara o ID do objeto atual com o objeto passado como parametro.
+        } else {
+            return false;
+        }
     }
     
     @Override
     public String toString(){ //O metodo toString() serve para obter uma representação em string de um objeto, facilitando a exibição de informações.
-        return "FLASHCARD: (" + "ID: " + idflashcard + 
+        return "FLASHCARD: (" + "ID: " + id_flashcard + 
                 ", PERGUNTA: " + pergunta + 
                 ", RESPOSTA: " + resposta + 
                 ", DIFICULDADE: " + dificuldade + ")" ; 
+    }
+
+    public void setIdflashcard(String idflashcard) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String getPergunta() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public int getIdflashcard() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 

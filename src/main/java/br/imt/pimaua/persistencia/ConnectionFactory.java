@@ -1,5 +1,5 @@
 
-package br.imt.pimaua;
+package br.imt.pimaua.persistencia;
 
 import java.sql.Connection ;
 import java.sql.DriverManager ;

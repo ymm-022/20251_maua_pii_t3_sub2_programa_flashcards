@@ -18,7 +18,7 @@ public class FlashcardDAO {
         var flashcards = new ArrayList<Flashcard>();
         var sql = "SELECT * FROM Flashcard";
         try(
-            var conexao = new br.imt.pimaua.ConnectionFactory().obterConexao();
+            var conexao = new br.imt.pimaua.persistencia.ConnectionFactory().obterConexao();
             var ps = conexao.prepareStatement(sql);
             var rs = ps.executeQuery();
         ){
@@ -37,7 +37,7 @@ public class FlashcardDAO {
         var sql = "INSERT INTO Flashcard (pergunta_flashcard, resposta_flashcard, id_flashcard, dificuldade_flashcard) VALUES (?, ?, ?, ?)";
 
         try (
-            var conexao = new br.imt.pimaua.ConnectionFactory().obterConexao();
+            var conexao = new br.imt.pimaua.persistencia.ConnectionFactory().obterConexao();
             var ps = conexao.prepareStatement(sql);
         ) {
             ps.setString(1, flashcard.getPergunta());
