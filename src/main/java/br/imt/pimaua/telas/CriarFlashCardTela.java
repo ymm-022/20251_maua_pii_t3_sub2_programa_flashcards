@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.imt.telaflashcards;
+package br.imt.pimaua.telas ;
 
+import br.imt.pimaua.Flashcard ;
+import br.imt.pimaua.persistencia.FlashcardDAO;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Ian
@@ -15,6 +18,7 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
      */
     public CriarFlashCardTela() {
         initComponents();
+        
     }
 
     /**
@@ -72,7 +76,7 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
         });
 
         materiaComboBox.setBackground(new java.awt.Color(255, 229, 174));
-        materiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        materiaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Matemática", "Lingua Portuguesa", "Física", "Química", "Biologia", "História", "Linguagens" }));
         materiaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 materiaComboBoxActionPerformed(evt);
@@ -80,7 +84,7 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
         });
 
         dificuldadeComboBox.setBackground(new java.awt.Color(255, 229, 174));
-        dificuldadeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Facil", "Medio", "Dificil" }));
+        dificuldadeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Fácil", "Médio", "Difícil" }));
         dificuldadeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dificuldadeComboBoxActionPerformed(evt);
@@ -188,32 +192,57 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
 
     private void enunciadoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enunciadoTextFieldActionPerformed
         // nesse campo o usuario ira inserir a PERGUNTA do flashcard
+        String pergunta = enunciadoTextField.getText() ;
     }//GEN-LAST:event_enunciadoTextFieldActionPerformed
 
     private void respostaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respostaTextFieldActionPerformed
         // nesse campo o usuario ira inserir a RESPOSTA do flashcard
+        String resposta = respostaTextField.getText() ;
     }//GEN-LAST:event_respostaTextFieldActionPerformed
 
     private void criarFlashcardButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarFlashcardButtomActionPerformed
         // responsavel por criar o flashcard (ira jogar os dados preenchidos para o banco de dados)
-    }//GEN-LAST:event_criarFlashcardButtomActionPerformed
 
+        String pergunta = enunciadoTextField.getText() ;
+        String resposta = respostaTextField.getText() ;
+        var dificuldade = dificuldadeComboBox.getSelectedItem() ;
+        var materia = materiaComboBox.getSelectedItem() ;
+        
+        var flashcard = new Flashcard(resposta, pergunta, dificuldade, materia);
+        try {
+            FlashcardDAO dao = new FlashcardDAO() ;
+            dao.cadastrar(flashcard) ;
+            
+        } catch (Exception e){
+            
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: ");
+        }
+        
+        
+    }//GEN-LAST:event_criarFlashcardButtomActionPerformed
+        
     private void visualizarButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarButtomActionPerformed
         // a tela do flashcard comecara com setVisible(false) ao clicar nesse botao o respostaTextField.setvisible(true) 
         //esse botaonao eh necessario para a tela de criar flashcard
+        setVisible(false) ;
+        FlashCardTela flashcard ;
+        flashcard = new FlashCardTela();
+        flashcard.setVisible(true) ;
     }//GEN-LAST:event_visualizarButtomActionPerformed
 
     private void dificuldadeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificuldadeComboBoxActionPerformed
-        // o usuario ira escolher a dificuldade
+        // o usuario ira escolher a dificulde
     }//GEN-LAST:event_dificuldadeComboBoxActionPerformed
 
     private void materiaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materiaComboBoxActionPerformed
         // jogador ira escolher a materia( para colocar as materias: clicar no combobox->propriets->model-> colocar as materias)
+        
     }//GEN-LAST:event_materiaComboBoxActionPerformed
 
     private void voltarButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtomActionPerformed
         this.setVisible(false);
-        //colocar a tela que sera a anterior .setVisible(true)
+        InicioTela inicio = new InicioTela() ;
+        inicio.setVisible(true) ;
     }//GEN-LAST:event_voltarButtomActionPerformed
 
     /**
@@ -222,35 +251,16 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CriarFlashCardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CriarFlashCardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CriarFlashCardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CriarFlashCardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+    
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new CriarFlashCardTela().setVisible(true);
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton criarFlashcardButtom;
@@ -265,4 +275,16 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
     private javax.swing.JButton visualizarButtom;
     private javax.swing.JButton voltarButtom;
     // End of variables declaration//GEN-END:variables
+
+    private static class Dificuldade {
+
+        public Dificuldade() {
+        }
+    }
+
+    private static class Materia {
+
+        public Materia() {
+        }
+    }
 }

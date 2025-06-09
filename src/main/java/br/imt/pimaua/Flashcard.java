@@ -16,7 +16,7 @@ public class Flashcard {
         this.dificuldade = dificuldade ;
     }
 
-    public Flashcard(String pergunta, String resposta, int idFlashcard, String dificuldade) {
+    public Flashcard(String pergunta, String resposta, Object idFlashcard, Object dificuldade) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
