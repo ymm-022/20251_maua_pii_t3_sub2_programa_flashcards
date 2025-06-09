@@ -8,8 +8,7 @@ import java.util.List;
 
 public class UsuarioDAO {
     public List <Usuario> obterusuario() throws Exception{
-        
-       
+         
         var usuarios = new ArrayList<Usuario>();
         var sql = "SELECT * FROM usuario";
         try(
@@ -39,5 +38,16 @@ public class UsuarioDAO {
             ps.setInt(3, usuario.getSenha());
             ps.executeUpdate();
         }
+    }  
+    public boolean autenticar(String email, int senha) throws Exception {
+    var usuarios = obterusuario(); // usa seu método existente
+
+    for (Usuario usuario : usuarios) {
+        if (usuario.getEmail().equals(email) && usuario.getSenha() == senha) {
+            return true; // usuário encontrado
+        }
     }
+    return false; // nenhum usuário correspondente
+}
+
 }

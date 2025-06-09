@@ -1,20 +1,23 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.imt.pimaua.telas;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Ian
  */
 public class ModoDeJogoTela extends javax.swing.JFrame {
-
     /**
      * Creates new form ModoDeJogoTela
      */
     public ModoDeJogoTela() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -31,7 +34,8 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
         TituloLabel = new javax.swing.JLabel();
         AleatorioButton = new javax.swing.JButton();
         PorMateriaButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        DesafioButton = new javax.swing.JButton();
+        VoltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 198, 75));
@@ -54,16 +58,11 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
         });
 
         PorMateriaButton.setText("Modo por matéria");
-        PorMateriaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PorMateriaButtonActionPerformed(evt);
-            }
-        });
 
-        jButton3.setText("Modo desafio");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        DesafioButton.setText("Modo desafio");
+        DesafioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                DesafioButtonActionPerformed(evt);
             }
         });
 
@@ -74,104 +73,127 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
             .addGroup(AzulPanelLayout.createSequentialGroup()
                 .addGroup(AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AzulPanelLayout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(TituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AzulPanelLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(19, 19, 19)
                         .addGroup(AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PorMateriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AleatorioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                            .addComponent(PorMateriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AleatorioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DesafioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(AzulPanelLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(TituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         AzulPanelLayout.setVerticalGroup(
             AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AzulPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(TituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(AleatorioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(PorMateriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AleatorioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addComponent(PorMateriaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(DesafioButton)
+                .addGap(23, 23, 23))
         );
+
+        VoltarButton.setBackground(new java.awt.Color(255, 198, 75));
+        VoltarButton.setText("Voltar");
+        VoltarButton.setBorderPainted(false);
+        VoltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AmareloPanelLayout = new javax.swing.GroupLayout(AmareloPanel);
         AmareloPanel.setLayout(AmareloPanelLayout);
         AmareloPanelLayout.setHorizontalGroup(
             AmareloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AmareloPanelLayout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+            .addGroup(AmareloPanelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addComponent(AzulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(AmareloPanelLayout.createSequentialGroup()
+                .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         AmareloPanelLayout.setVerticalGroup(
             AmareloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AmareloPanelLayout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+                .addComponent(VoltarButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(AzulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AmareloPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(AmareloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AmareloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(AmareloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void AleatorioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AleatorioButtonActionPerformed
-        // TODO add your handling code here:
+           //new JogoTela("Aleatório").setVisible(true);
+        dispose();
+    this.setVisible(false);
+   
+    // Aquivocê pode abrir uma tela de jogo com esse modo
+    // Exemplo: new JogoTela("aleatorio").setVisible(true);
+    // dispose();
+
+
     }//GEN-LAST:event_AleatorioButtonActionPerformed
 
-    private void PorMateriaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PorMateriaButtonActionPerformed
-        // TODO add your handling code here:
+    private void DesafioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesafioButtonActionPerformed
+       
+        new ModoDesafioaTela().setVisible(true); // Abre a tela
+        dispose(); // Fecha a atual
         this.setVisible(false);
-        SelecionarMateria materias = new SelecionarMateria();
-        materias.setVisible(true);
-    }//GEN-LAST:event_PorMateriaButtonActionPerformed
+        ModoDesafioaTela Desafio = new ModoDesafioaTela();
+        Desafio.setVisible(true);
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+
+        
+  
+    }//GEN-LAST:event_DesafioButtonActionPerformed
+
+    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+        this.setVisible(false);
+        InicioTela inicio = new InicioTela() ;
+        inicio.setVisible(true) ;
+        //nome tela //crio variavel 
+         //inicio = new//nome tela()
+         //inicio.setVisible(true)// TODO add your handling code here:
+    }//GEN-LAST:event_VoltarButtonActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @param args
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
+       try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ModoDeJogoTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ModoDeJogoTela().setVisible(true);
@@ -183,8 +205,9 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
     private javax.swing.JButton AleatorioButton;
     private javax.swing.JPanel AmareloPanel;
     private javax.swing.JPanel AzulPanel;
+    private javax.swing.JButton DesafioButton;
     private javax.swing.JButton PorMateriaButton;
     private javax.swing.JLabel TituloLabel;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton VoltarButton;
     // End of variables declaration//GEN-END:variables
 }
