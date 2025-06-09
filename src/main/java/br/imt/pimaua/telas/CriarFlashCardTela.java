@@ -40,7 +40,6 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
         materiaComboBox = new javax.swing.JComboBox<>();
         dificuldadeComboBox = new javax.swing.JComboBox<>();
         criarFlashcardButtom = new javax.swing.JButton();
-        visualizarButtom = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,13 +99,6 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
             }
         });
 
-        visualizarButtom.setText("visualizar");
-        visualizarButtom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                visualizarButtomActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -125,14 +117,9 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
                 .addGap(123, 123, 123))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(respostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(visualizarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(enunciadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(respostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enunciadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,10 +132,8 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
                 .addComponent(enunciadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(enunciadoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(respostaLabel)
-                    .addComponent(visualizarButtom))
+                .addGap(30, 30, 30)
+                .addComponent(respostaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(respostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -172,7 +157,7 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(voltarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -218,18 +203,13 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar: ");
         }
         
+        this.setVisible(false) ;
+        FlashCardTela flashcardtela ;
+        flashcardtela = new FlashCardTela();
+        flashcardtela.setVisible(true) ;
         
     }//GEN-LAST:event_criarFlashcardButtomActionPerformed
         
-    private void visualizarButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarButtomActionPerformed
-        // a tela do flashcard comecara com setVisible(false) ao clicar nesse botao o respostaTextField.setvisible(true) 
-        //esse botaonao eh necessario para a tela de criar flashcard
-        setVisible(false) ;
-        FlashCardTela flashcard ;
-        flashcard = new FlashCardTela();
-        flashcard.setVisible(true) ;
-    }//GEN-LAST:event_visualizarButtomActionPerformed
-
     private void dificuldadeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificuldadeComboBoxActionPerformed
         // o usuario ira escolher a dificulde
     }//GEN-LAST:event_dificuldadeComboBoxActionPerformed
@@ -272,7 +252,6 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> materiaComboBox;
     private javax.swing.JLabel respostaLabel;
     private javax.swing.JTextField respostaTextField;
-    private javax.swing.JButton visualizarButtom;
     private javax.swing.JButton voltarButtom;
     // End of variables declaration//GEN-END:variables
 

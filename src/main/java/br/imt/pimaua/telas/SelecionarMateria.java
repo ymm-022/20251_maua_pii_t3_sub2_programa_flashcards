@@ -143,9 +143,7 @@ public class SelecionarMateria extends javax.swing.JFrame {
     }//GEN-LAST:event_VoltarButtonActionPerformed
 
     private void ConfirmarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarButtonActionPerformed
-        this.setVisible(false);
-        InicioTela Inicio = new InicioTela();
-        Inicio.setVisible(true);        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_ConfirmarButtonActionPerformed
 
     /**
