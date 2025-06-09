@@ -30,7 +30,6 @@ public class JogoTela extends javax.swing.JFrame {
     private void initComponents() {
 
         fundoJogoPanel = new javax.swing.JPanel();
-        linhaVermelhaPanel = new javax.swing.JPanel();
         linhaAzulPanel = new javax.swing.JPanel();
         pararJogoButton = new javax.swing.JButton();
         proxPerguntaButton = new javax.swing.JButton();
@@ -56,24 +55,8 @@ public class JogoTela extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        fundoJogoPanel.setBackground(new java.awt.Color(255, 255, 0));
+        fundoJogoPanel.setBackground(new java.awt.Color(255, 198, 76));
         fundoJogoPanel.setLayout(null);
-
-        linhaVermelhaPanel.setBackground(new java.awt.Color(255, 51, 51));
-
-        javax.swing.GroupLayout linhaVermelhaPanelLayout = new javax.swing.GroupLayout(linhaVermelhaPanel);
-        linhaVermelhaPanel.setLayout(linhaVermelhaPanelLayout);
-        linhaVermelhaPanelLayout.setHorizontalGroup(
-            linhaVermelhaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-        );
-        linhaVermelhaPanelLayout.setVerticalGroup(
-            linhaVermelhaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        fundoJogoPanel.add(linhaVermelhaPanel);
-        linhaVermelhaPanel.setBounds(-7, 490, 680, 30);
 
         linhaAzulPanel.setBackground(new java.awt.Color(51, 204, 255));
 
@@ -91,7 +74,7 @@ public class JogoTela extends javax.swing.JFrame {
         fundoJogoPanel.add(linhaAzulPanel);
         linhaAzulPanel.setBounds(0, 520, 670, 60);
 
-        pararJogoButton.setBackground(new java.awt.Color(255, 0, 0));
+        pararJogoButton.setBackground(new java.awt.Color(238, 33, 82));
         pararJogoButton.setForeground(new java.awt.Color(255, 255, 255));
         pararJogoButton.setText("parar");
         pararJogoButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +85,7 @@ public class JogoTela extends javax.swing.JFrame {
         fundoJogoPanel.add(pararJogoButton);
         pararJogoButton.setBounds(130, 380, 130, 40);
 
-        proxPerguntaButton.setBackground(new java.awt.Color(51, 51, 255));
+        proxPerguntaButton.setBackground(new java.awt.Color(30, 180, 195));
         proxPerguntaButton.setForeground(new java.awt.Color(255, 255, 255));
         proxPerguntaButton.setText("próxima pregunta");
         proxPerguntaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,10 +96,10 @@ public class JogoTela extends javax.swing.JFrame {
         fundoJogoPanel.add(proxPerguntaButton);
         proxPerguntaButton.setBounds(390, 380, 130, 40);
 
-        fundoRespostaPanel.setBackground(new java.awt.Color(255, 214, 163));
+        fundoRespostaPanel.setBackground(new java.awt.Color(255, 229, 174));
         fundoRespostaPanel.setLayout(null);
 
-        revelarButton.setBackground(new java.awt.Color(255, 214, 163));
+        revelarButton.setBackground(new java.awt.Color(255, 229, 174));
         revelarButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 32)); // NOI18N
         revelarButton.setText("👁️");
         revelarButton.setBorder(null);
@@ -133,7 +116,6 @@ public class JogoTela extends javax.swing.JFrame {
         fundoRespostaPanel.add(revelarButton);
         revelarButton.setBounds(330, 0, 50, 40);
 
-        respostaTextPane.setBackground(new java.awt.Color(255, 214, 160));
         respostaTextPane.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Resposta"));
         jScrollPane2.setViewportView(respostaTextPane);
 
@@ -143,8 +125,10 @@ public class JogoTela extends javax.swing.JFrame {
         fundoJogoPanel.add(fundoRespostaPanel);
         fundoRespostaPanel.setBounds(130, 140, 390, 220);
 
-        fundoPerguntaPanel.setBackground(new java.awt.Color(255, 255, 255));
+        fundoPerguntaPanel.setBackground(new java.awt.Color(255, 229, 174));
 
+        perguntaTextPane.setEditable(false);
+        perguntaTextPane.setBackground(new java.awt.Color(255, 255, 255));
         perguntaTextPane.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Pergunta"));
         jScrollPane1.setViewportView(perguntaTextPane);
 
@@ -172,7 +156,7 @@ public class JogoTela extends javax.swing.JFrame {
         fundoJogoPanel.add(logoPoliedro);
         logoPoliedro.setBounds(570, 20, 0, 0);
 
-        voltarButton.setBackground(new java.awt.Color(255, 255, 0));
+        voltarButton.setBackground(new java.awt.Color(255, 198, 76));
         voltarButton.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         voltarButton.setText("←");
         voltarButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -260,7 +244,6 @@ public class JogoTela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel linhaAzulPanel;
-    private javax.swing.JPanel linhaVermelhaPanel;
     private javax.swing.JLabel logoPoliedro;
     private javax.swing.JLabel logoPoliedroLabel;
     private javax.swing.JButton pararJogoButton;
