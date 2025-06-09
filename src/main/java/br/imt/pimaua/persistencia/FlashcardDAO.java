@@ -25,16 +25,17 @@ public class FlashcardDAO {
             while(rs.next()){
                 var pergunta = rs.getString("pergunta_flashcard");
                 var resposta = rs.getString("resposta_flashcard");
-                var idFlashcard = rs.getInt("id_flashcard");
+                var id_flashcard = rs.getInt("id_flashcard");
                 var dificuldade = rs.getString("dificuldade_flashcard");
-                var flashcard = new Flashcard(pergunta, resposta,idFlashcard, dificuldade);
+                var materia = rs.getString("materia_flashcard") ;
+                var flashcard = new Flashcard(pergunta, resposta, id_flashcard, dificuldade, materia);
                 flashcards.add(flashcard);
             }
             return flashcards;
         }
     }
     public void cadastrar(Flashcard flashcard) throws Exception {
-        var sql = "INSERT INTO Flashcard (pergunta_flashcard, resposta_flashcard, id_flashcard, dificuldade_flashcard) VALUES (?, ?, ?, ?)";
+        var sql = "INSERT INTO Flashcard (pergunta_flashcard, resposta_flashcard, id_flashcard, dificuldade_flashcard, materia_flashcard) VALUES (?, ?, ?, ?)";
 
         try (
             var conexao = new br.imt.pimaua.persistencia.ConnectionFactory().obterConexao();
@@ -44,6 +45,7 @@ public class FlashcardDAO {
             ps.setString(2, flashcard.getResposta());
             ps.setInt(3, flashcard.getIdflashcard());
             ps.setString(4, flashcard.getDificuldade());
+            ps.setString(5, flashcard.getMateria());
             ps.executeUpdate();
         }
     }
