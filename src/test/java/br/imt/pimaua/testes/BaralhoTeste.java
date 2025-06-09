@@ -16,7 +16,8 @@ public class BaralhoTeste {
         String pergunta = "pergunta" ;
         String dificuldade = "dificuldade" ;
         Flashcard flashcard = new Flashcard(id, pergunta, resposta, dificuldade) ;
-        Baralho baralho = new Baralho() ;
+        String titulo = null;
+        Baralho baralho = new Baralho(titulo) ;
         
         baralho.addFlashcard(flashcard) ;
         
@@ -52,7 +53,8 @@ public class BaralhoTeste {
         Flashcard flashcard = new Flashcard(idbaralho, resposta, pergunta, dificuldade) ;
         Flashcard flashcard2 = new Flashcard(idbaralho, resposta, pergunta, dificuldade) ;
         Flashcard flashcard3 = new Flashcard(idbaralho, resposta, pergunta, dificuldade) ;
-        Baralho baralho = new Baralho() ;
+        String titulo = null;
+        var baralho = new Baralho(titulo) ;
         listaflashcards.add(flashcard) ;
         listaflashcards.add(flashcard2) ;
         listaflashcards.add(flashcard3) ;
@@ -72,7 +74,8 @@ public class BaralhoTeste {
         Flashcard flashcard = new Flashcard(idbaralho, resposta, pergunta, dificuldade) ;
         Flashcard flashcard2 = new Flashcard("2", "resposta2", "pergunta2", "dificuldade2") ;
         Flashcard flashcard3 = new Flashcard("3", "resposta3", "pergunta3", "dificuldade3") ;
-        Baralho baralho = new Baralho() ;
+        String titulo = null;
+        Baralho baralho = new Baralho(titulo) ;
         listaflashcards.add(flashcard) ;
         listaflashcards.add(flashcard2) ;
         listaflashcards.add(flashcard3) ;

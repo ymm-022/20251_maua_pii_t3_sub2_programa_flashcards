@@ -16,7 +16,7 @@ public class Baralho {
     //Construtores da classe.
     //PADRAO:
     //O construtor padrao pode ser criado sem parametros, caso o usuario nao o usuario nao especifica-los
-    public Baralho(){
+    public Baralho(String titulo){
         this.flashcard = new ArrayList<>() ;
     }
     //COM ATRIBUTOS:

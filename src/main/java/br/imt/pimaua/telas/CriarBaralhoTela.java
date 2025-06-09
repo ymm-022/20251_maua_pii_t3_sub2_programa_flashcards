@@ -1,17 +1,36 @@
 
 package br.imt.pimaua.telas;
 
+import br.imt.pimaua.Baralho;
+import br.imt.pimaua.persistencia.ConnectionFactory ;
+import br.imt.pimaua.persistencia.BaralhoDAO;
+import javax.swing.JOptionPane;
+import javax.swing.DefaultComboBoxModel;
+import java.lang.Exception ;
 /**
  *
  * @author 25.00881-4
  */
 public class CriarBaralhoTela extends javax.swing.JFrame {
-
+    private void obterBaralho(){
+        try{
+            var dao = new BaralhoDAO() ;
+            var baralhos = dao.obterBaralho() ;
+            selecionarBaralhoComboBox.setModel(
+               new DefaultComboBoxModel<Baralho>(baralhos.toArray(new Baralho[]{}))
+            ) ;
+        } 
+        catch(Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Lista de cursos indisponível");
+        }
+    }
     /**
      * Creates new form CriarBaralhoTela
      */
     public CriarBaralhoTela() {
         initComponents();
+        obterBaralho();
     }
 
     /**
@@ -37,7 +56,6 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(30, 180, 195));
 
-        selecionarBaralhoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baralho A", "Baralho B", "Baralho C", "Baralho D" }));
         selecionarBaralhoComboBox.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         selecionarBaralhoComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,9 +156,19 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
 
     private void criarBaralhoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarBaralhoButtonActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false) ;
-        // criarBaralhoButton criarBaralho = new preencherDadosFlashcardTela() ;
-        // adicionar tela que preenche os dados do flashcard.
+        String titulo = nomeBaralhoTextField.getText() ;
+        
+        var baralho = new Baralho(titulo) ;
+        try{
+            BaralhoDAO dao = new BaralhoDAO() ;
+            dao.cadastrar(baralho) ;
+        }   catch(Exception e){
+            
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: ");
+        }   
+    this.setVisible(false) ;
+    CriarFlashCardTela criarflashcard = new CriarFlashCardTela() ;
+    criarflashcard.setVisible(true) ;
     }//GEN-LAST:event_criarBaralhoButtonActionPerformed
 
     private void nomeBaralhoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeBaralhoTextFieldActionPerformed
@@ -190,6 +218,6 @@ public class CriarBaralhoTela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nomeBaralhoTextField;
-    private javax.swing.JComboBox<String> selecionarBaralhoComboBox;
+    private javax.swing.JComboBox<Baralho> selecionarBaralhoComboBox;
     // End of variables declaration//GEN-END:variables
 }
