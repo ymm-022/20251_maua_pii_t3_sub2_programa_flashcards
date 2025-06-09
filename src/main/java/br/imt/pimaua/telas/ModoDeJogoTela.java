@@ -58,6 +58,11 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
         });
 
         PorMateriaButton.setText("Modo por matéria");
+        PorMateriaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PorMateriaButtonActionPerformed(evt);
+            }
+        });
 
         DesafioButton.setText("Modo desafio");
         DesafioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +183,13 @@ public class ModoDeJogoTela extends javax.swing.JFrame {
          //inicio = new//nome tela()
          //inicio.setVisible(true)// TODO add your handling code here:
     }//GEN-LAST:event_VoltarButtonActionPerformed
+
+    private void PorMateriaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PorMateriaButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false) ;
+        SelecionarMateria materias = new SelecionarMateria() ;
+        materias.setVisible(true) ;
+    }//GEN-LAST:event_PorMateriaButtonActionPerformed
 
     /**
      * @param args

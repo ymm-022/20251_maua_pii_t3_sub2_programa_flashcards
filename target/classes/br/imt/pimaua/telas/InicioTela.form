@@ -23,7 +23,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -46,7 +50,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" pref="327" max="-2" attributes="0"/>
-                  <EmptySpace pref="221" max="32767" attributes="0"/>
+                  <EmptySpace pref="209" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -83,6 +87,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="modoDeJogoButton" max="32767" attributes="0"/>
                           <Component id="criarFlashCardButton" pref="255" max="32767" attributes="0"/>
+                          <Component id="criarBaralhoButton" pref="255" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="33" max="32767" attributes="0"/>
                   </Group>
@@ -95,7 +100,9 @@
                       <Component id="modoDeJogoButton" min="-2" pref="45" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="criarFlashCardButton" min="-2" pref="45" max="-2" attributes="0"/>
-                      <EmptySpace pref="83" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="criarBaralhoButton" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -115,6 +122,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criarFlashCardButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="criarBaralhoButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CRIAR BARALHO"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criarBaralhoButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
