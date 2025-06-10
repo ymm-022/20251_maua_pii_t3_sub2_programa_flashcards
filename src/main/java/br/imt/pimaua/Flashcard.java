@@ -1,5 +1,4 @@
-
-package br.imt.pimaua;
+package br.imt.pimaua;More actions
 
 public class Flashcard {
     //Atributos da classe.
@@ -8,7 +7,7 @@ public class Flashcard {
     private Integer id_flashcard ;
     private String dificuldade ;
     private String materia ;
- 
+
     //Construtor da classe.
     public Flashcard(String pergunta, String resposta, Integer id_flashcard, String dificuldade, String materia){
         this.pergunta = pergunta ;
@@ -16,6 +15,15 @@ public class Flashcard {
         this.id_flashcard = id_flashcard ;   
         this.dificuldade = dificuldade ;
         this.materia = materia ;
+    }
+    public Flashcard(String pergunta, String resposta, Object dificuldade, Object materia){Add commentMore actions
+        this.pergunta = pergunta ;
+        this.resposta = resposta ;
+        this.dificuldade = dificuldade.toString() ;
+        this.materia = materia.toString() ;
+    }
+    public String getPergunta(){
+        return pergunta ;
     }
 
     //Getters / Setters.
@@ -26,7 +34,7 @@ public class Flashcard {
     public void setPergunta(String pergunta){
         this.pergunta = pergunta ;
     }
-    
+
     //p/ RESPOSTA:
     public String getResposta(){
         return this.resposta ;
@@ -34,7 +42,7 @@ public class Flashcard {
     public void setResposta(String resposta){
         this.resposta = resposta ;
     }
-    
+
     //p/ ID_FLASHCARD: 
     public Integer getId_flashcard(){
         return this.id_flashcard ;
@@ -42,7 +50,6 @@ public class Flashcard {
     public void setId_flashcard(Integer id_flashcard){
         this.id_flashcard = id_flashcard ;
     }
-    
     //p/ DIFICULDADE:
     public String getDificuldade(){
         return this.dificuldade ;
@@ -67,7 +74,7 @@ public class Flashcard {
     public String mostrarResposta(){
         return "RESPOSTA: " + resposta + " " + "(DIFICULDADE: " + dificuldade + ")" ;
     }
-    
+
     //Helpers (metodos que ajudam na organizacao nos codigos de testes).
     @Override //O @Override garante que voce esta sobrescrevendo um metodo e nao criando um completamente novo.
     public boolean equals(Object objeto) {
@@ -78,7 +85,7 @@ public class Flashcard {
             return false;
         }
     }
-    
+
     @Override
     public String toString(){ //O metodo toString() serve para obter uma representação em string de um objeto, facilitando a exibição de informações.
         return "FLASHCARD: (" + "ID: " + id_flashcard + 
@@ -87,9 +94,7 @@ public class Flashcard {
                 ", DIFICULDADE: " + dificuldade + 
                 ", MATERIA: " + materia + ")" ; 
     }
-
-    public void setId_flashcard(String id_flashcard) {
+    public void setId_flashcard(String id_flashcard) {Add commentMore actions
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
-
