@@ -16,7 +16,7 @@ public class Baralho {
     //Construtores da classe.
     //PADRAO:
     //O construtor padrao pode ser criado sem parametros, caso o usuario nao o usuario nao especifica-los
-    public Baralho(){
+    public Baralho(String titulo){
         this.flashcard = new ArrayList<>() ;
     }
     //COM ATRIBUTOS:
@@ -25,6 +25,14 @@ public class Baralho {
         this.nome = nome ;
         this.materia = materia ;
         this.autor = autor ;                   
+    }
+
+    public Baralho(List<Flashcard> listaflashcards) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Baralho(int idBaralho, String nome, String materia) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     // Getters / Setters
     //p/ ID_BARALHO:
@@ -90,5 +98,17 @@ public class Baralho {
             }
         }
         return sb.toString();//Converte o String Builder em String final, retornando o texto formato completo.
+    }
+
+    public void addFlashcard(Flashcard flashcard) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public int getTamanho() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public int getIdbaralho() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

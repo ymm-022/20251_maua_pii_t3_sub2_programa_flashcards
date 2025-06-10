@@ -1,15 +1,15 @@
 
-package br.imt.pimaua;
+package br.imt.pimaua.persistencia;
 
 import java.sql.Connection ;
 import java.sql.DriverManager ;
 
 public class ConnectionFactory {
-    private String host = "mysql-gyozadb-pii-20251-maua.i.aivencloud.com" ;
-    private String port = "24545" ;
+    private String host = "mysql-32f32e55-muratajulio2-b7b5.i.aivencloud.com" ;
+    private String port = "21431" ;
     private String db = "20251_MAUA_PII_FLASHCARDS" ;
     private String user = "avnadmin" ;
-    private String password = "AVNS_SkxHbc0w6rZJyVV_5XY" ;
+    private String password = "AVNS_mXvB2fDNsdVZeeDwyXH" ;
     
     public Connection obterConexao() throws Exception{
         var s = String.format(

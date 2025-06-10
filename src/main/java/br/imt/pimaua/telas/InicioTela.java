@@ -29,8 +29,8 @@ public class InicioTela extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         modoDeJogoButton = new javax.swing.JButton();
-        bibliotecaFlashCardButton = new javax.swing.JButton();
         criarFlashCardButton = new javax.swing.JButton();
+        criarBaralhoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,17 +47,17 @@ public class InicioTela extends javax.swing.JFrame {
             }
         });
 
-        bibliotecaFlashCardButton.setText("BIBLIOTECA FLASHCARD");
-        bibliotecaFlashCardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bibliotecaFlashCardButtonActionPerformed(evt);
-            }
-        });
-
         criarFlashCardButton.setText("CRIAR FLASHCARD");
         criarFlashCardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 criarFlashCardButtonActionPerformed(evt);
+            }
+        });
+
+        criarBaralhoButton.setText("CRIAR BARALHO");
+        criarBaralhoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criarBaralhoButtonActionPerformed(evt);
             }
         });
 
@@ -69,20 +69,20 @@ public class InicioTela extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(modoDeJogoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bibliotecaFlashCardButton, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                    .addComponent(criarFlashCardButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(criarFlashCardButton, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(criarBaralhoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(104, 104, 104)
                 .addComponent(modoDeJogoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(bibliotecaFlashCardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(criarFlashCardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(criarBaralhoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -92,7 +92,7 @@ public class InicioTela extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(222, 222, 222)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +105,10 @@ public class InicioTela extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,18 +120,22 @@ public class InicioTela extends javax.swing.JFrame {
 
     private void modoDeJogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoDeJogoButtonActionPerformed
         this.setVisible(false);
-        CriarUsuarioTela criar = new CriarUsuarioTela();
-        criar.setVisible(true);
+        ModoDeJogoTela modos = new ModoDeJogoTela() ;
+        modos.setVisible(true) ;
     }//GEN-LAST:event_modoDeJogoButtonActionPerformed
-
-    private void bibliotecaFlashCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bibliotecaFlashCardButtonActionPerformed
-        this.setVisible(false);
-        
-    }//GEN-LAST:event_bibliotecaFlashCardButtonActionPerformed
 
     private void criarFlashCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarFlashCardButtonActionPerformed
         this.setVisible(false);
+        CriarFlashCardTela criarflashcard = new CriarFlashCardTela() ;
+        criarflashcard.setVisible(true) ;
     }//GEN-LAST:event_criarFlashCardButtonActionPerformed
+
+    private void criarBaralhoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarBaralhoButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false) ;
+        CriarBaralhoTela criarbaralho = new CriarBaralhoTela() ;
+        criarbaralho.setVisible(true) ;
+    }//GEN-LAST:event_criarBaralhoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,7 +173,7 @@ public class InicioTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bibliotecaFlashCardButton;
+    private javax.swing.JButton criarBaralhoButton;
     private javax.swing.JButton criarFlashCardButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
