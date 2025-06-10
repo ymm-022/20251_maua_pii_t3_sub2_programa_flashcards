@@ -200,7 +200,7 @@ public class CriarFlashCardTela extends javax.swing.JFrame {
             
         } catch (Exception e){
             
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: ");
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + e.getMessage());
         }
         
         this.setVisible(false) ;

@@ -18,8 +18,14 @@ public class Flashcard {
         this.materia = materia ;
     }
 
-    public Flashcard(String pergunta, String resposta, Object idFlashcard, Object dificuldade) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Flashcard(String pergunta, String resposta, Object dificuldade, Object materia){
+        this.pergunta = pergunta ;
+        this.resposta = resposta ;
+        this.dificuldade = dificuldade.toString() ;
+        this.materia = materia.toString() ;
+    }
+    public String getPergunta(){
+        return pergunta ;
     }
     
     //Getters / Setters.
@@ -42,6 +48,9 @@ public class Flashcard {
     //p/ ID_FLASHCARD: 
     public Integer getId_flashcard(){
         return this.id_flashcard ;
+    }
+    public void setId_flashcard(Integer id_flashcard){
+        this.id_flashcard = id_flashcard ;
     }
     //p/ DIFICULDADE:
     public String getDificuldade(){
@@ -86,15 +95,7 @@ public class Flashcard {
                 ", MATERIA: " + materia + ")" ; 
     }
 
-    public void setIdflashcard(String idflashcard) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String getPergunta() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public int getIdflashcard() {
+    public void setId_flashcard(String id_flashcard) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

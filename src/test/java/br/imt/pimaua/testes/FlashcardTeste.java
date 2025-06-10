@@ -7,13 +7,13 @@ import org.junit.Test ;
 public class FlashcardTeste {
     @Test
     public void getIdflashcard(){
-        String idflashcard = "1" ;
+        String id_flashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
-        var flashcard = new Flashcard(idflashcard, pergunta, resposta, dificuldade) ;
+        var flashcard = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
         
-        flashcard.setIdflashcard(idflashcard) ;
+        flashcard.setId_flashcard(id_flashcard) ;
         
         assert(flashcard.getId_flashcard().equals("1")) ;
     }
@@ -46,14 +46,14 @@ public class FlashcardTeste {
     
     @Test
     public void testEquals(){
-        String id_flashcard = "1" ;
+        var id_flashcard = "1" ;
         var pergunta = "pergunta" ;
         var resposta = "resposta" ;
         var dificuldade = "dificuldade" ;
         Flashcard flashcard1 = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
         Flashcard flashcard2 = new Flashcard(id_flashcard, pergunta, resposta, dificuldade) ;
         
-        flashcard1.setIdflashcard(id_flashcard) ;
+        flashcard1.setId_flashcard(id_flashcard) ;
         
         assert(flashcard1 == flashcard2) ;
     }

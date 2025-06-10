@@ -9,6 +9,7 @@ import java.util.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 
 /**
@@ -17,6 +18,10 @@ import java.sql.Connection;
  */
 
 public class FlashcardDAO {
+    private static final String URL = "jdbc:mysql://mysql-32f32e55-muratajulio2-b7b5.i.aivencloud.com:21431/defaultdb" ;
+    private static final String USER = "avnadmin" ;
+    private static final String PASSWORD = "AVNS_mXvB2fDNsdVZeeDwyXH" ;
+    
     public List <Flashcard> obterFlashcard() throws Exception{
         
        
@@ -73,18 +78,21 @@ try {
 }
 
     public void cadastrar(Flashcard flashcard) throws Exception {
-        var sql = "INSERT INTO Flashcard (pergunta_flashcard, resposta_flashcard, id_flashcard, dificuldade_flashcard, materia_flashcard) VALUES (?, ?, ?, ?)";
+        var sql = "INSERT INTO Flashcard (pergunta_flashcard, resposta_flashcard, dificuldade_flashcard, materia_flashcard) VALUES (?, ?, ?, ?)";
 
         try (
-            var conexao = new br.imt.pimaua.persistencia.ConnectionFactory().obterConexao();
+            var conexao = DriverManager.getConnection(URL, USER, PASSWORD);
             var ps = conexao.prepareStatement(sql);
         ) {
             ps.setString(1, flashcard.getPergunta());
             ps.setString(2, flashcard.getResposta());
-            ps.setInt(3, flashcard.getIdflashcard());
-            ps.setString(4, flashcard.getDificuldade());
-            ps.setString(5, flashcard.getMateria());
+            ps.setString(3, flashcard.getDificuldade());
+            ps.setString(4, flashcard.getMateria());
+            
             ps.executeUpdate();
+        } catch(SQLException e){
+            e.printStackTrace() ;
+            throw e ;
         }
     }
 }
