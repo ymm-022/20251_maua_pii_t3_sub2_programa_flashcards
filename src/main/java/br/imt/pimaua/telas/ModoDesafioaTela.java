@@ -4,6 +4,10 @@
  */
 package br.imt.pimaua.telas;
 import javax.swing.JOptionPane;
+import java.util.List;
+
+import br.imt.pimaua.persistencia.FlashcardDAO;
+import br.imt.pimaua.Flashcard;
 
 /**
  *
@@ -168,13 +172,30 @@ private javax.swing.JButton ConfirmarButton;
     }//GEN-LAST:event_VoltarButtonActionPerformed
 
     private void confirmarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarButtonActionPerformed
+    
+    // Pega a dificuldade selecionada no ComboBox
+    String dificuldade = DificuldadeComboBox.getSelectedItem().toString();
+
+    // Chama o DAO pra buscar os flashcards
+    FlashcardDAO dao = new FlashcardDAO();
+    List<Flashcard> flashcards = dao.buscarPorDificuldade(dificuldade);
+
+    // Verifica se encontrou algo
+    if (flashcards.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Nenhum flashcard encontrado para essa dificuldade.");
+    } else {
+        // Abre a JogoTela com os flashcards
+        JogoTela jogo = new JogoTela(flashcards); // cria e mostra a tela de jogo
+jogo.setVisible(true);
 
     }//GEN-LAST:event_confirmarButtonActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
-           public static void main(String args[]) {
+   public static void main(String[] args) {
+
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

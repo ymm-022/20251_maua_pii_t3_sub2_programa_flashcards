@@ -1,4 +1,7 @@
 package br.imt.pimaua.telas;
+import java.util.List;
+import br.imt.pimaua.Flashcard;
+import javax.swing.JOptionPane;
 
 
 
@@ -179,7 +182,13 @@ public class JogoTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void proxPerguntaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proxPerguntaButtonActionPerformed
-        // TODO add your handling code here:
+ if (indiceAtual < flashcards.size() - 1) {
+    indiceAtual++;
+    exibirFlashcard();
+} else {
+    JOptionPane.showMessageDialog(this, "Você chegou ao fim dos flashcards!");
+}
+       
     }//GEN-LAST:event_proxPerguntaButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
@@ -201,6 +210,26 @@ public class JogoTela extends javax.swing.JFrame {
     private void revelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revelarButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_revelarButtonActionPerformed
+private List<Flashcard> flashcards;
+private int indiceAtual = 0;
+private void exibirFlashcard() {
+    if (!flashcards.isEmpty() && indiceAtual < flashcards.size()) {
+        Flashcard fc = flashcards.get(indiceAtual);
+        lblPergunta.setText(fc.getPergunta());
+        lblResposta.setText(""); // esconde a resposta até clicar "Revelar"
+    }
+}
+
+public JogoTela(List<Flashcard> flashcards) {
+    this.flashcards = flashcards;
+    initComponents();
+
+    // Exibir o primeiro flashcard como exemplo
+    if (!flashcards.isEmpty()) {
+    exibirFlashcard();
+}
+
+}
 
     /**
      * @param args the command line arguments
@@ -253,4 +282,8 @@ public class JogoTela extends javax.swing.JFrame {
     private javax.swing.JButton revelarButton;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
+private javax.swing.JLabel lblPergunta;
+private javax.swing.JLabel lblResposta;
+
 }
+
