@@ -18,16 +18,6 @@ public class Flashcard {
         this.materia = materia ;
     }
 
-    public Flashcard(String pergunta, String resposta, Object dificuldade, Object materia){
-        this.pergunta = pergunta ;
-        this.resposta = resposta ;
-        this.dificuldade = dificuldade.toString() ;
-        this.materia = materia.toString() ;
-    }
-    public String getPergunta(){
-        return pergunta ;
-    }
-    
     //Getters / Setters.
     //p/ PERGUNTA:
     public String getPerguta(){
@@ -52,6 +42,7 @@ public class Flashcard {
     public void setId_flashcard(Integer id_flashcard){
         this.id_flashcard = id_flashcard ;
     }
+    
     //p/ DIFICULDADE:
     public String getDificuldade(){
         return this.dificuldade ;
@@ -59,6 +50,8 @@ public class Flashcard {
     public void setDificuldade(String dificuldade){
         this.dificuldade = dificuldade ;
     }
+
+    //p/ MATERIA:
     public String getMateria(){
         return this.materia ;
     }
