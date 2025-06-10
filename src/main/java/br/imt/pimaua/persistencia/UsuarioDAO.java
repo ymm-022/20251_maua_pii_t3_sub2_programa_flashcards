@@ -17,25 +17,27 @@ public class UsuarioDAO {
             var rs = ps.executeQuery();
         ){
             while(rs.next()){
+                var idusuario = rs.getInt("id_usuario");
                 var nome = rs.getString("nome_usuario");
                 var email = rs.getString("email_usuario");
                 var senha = rs.getInt("senha_usuario");
-                var usuario = new Usuario(nome, email, senha);
+                var usuario = new Usuario(idusuario, nome, email, senha);
                 usuarios.add(usuario);
             }
             return usuarios;
         }
     }
     public void cadastrar(Usuario usuario) throws Exception {
-        var sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
+        var sql = "INSERT INTO usuario (id_usuario, nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?, ?)";
 
         try (
             var conexao = new ConnectionFactory().obterConexao();
             var ps = conexao.prepareStatement(sql);
         ) {
-            ps.setString(1, usuario.getNome());
-            ps.setString(2, usuario.getEmail());
-            ps.setInt(3, usuario.getSenha());
+            ps.setInt(1, usuario.getIdusuario());
+            ps.setString(2, usuario.getNome());
+            ps.setString(3, usuario.getEmail());
+            ps.setInt(4, usuario.getSenha());
             ps.executeUpdate();
         }
     }  
