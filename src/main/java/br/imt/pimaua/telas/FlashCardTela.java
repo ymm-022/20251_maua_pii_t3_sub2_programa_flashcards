@@ -39,7 +39,7 @@ public class FlashCardTela extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 198, 76));
 
-        jPanel3.setBackground(new java.awt.Color(255, 229, 174));
+        jPanel3.setBackground(new java.awt.Color(25, 194, 199));
 
         respostaTextArea.setColumns(20);
         respostaTextArea.setRows(5);
@@ -49,7 +49,10 @@ public class FlashCardTela extends javax.swing.JFrame {
         enunciadoTextArea.setRows(5);
         jScrollPane2.setViewportView(enunciadoTextArea);
 
-        visualizarButtom.setText("visualizar");
+        visualizarButtom.setBackground(new java.awt.Color(238, 33, 82));
+        visualizarButtom.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        visualizarButtom.setForeground(new java.awt.Color(255, 255, 255));
+        visualizarButtom.setText("Visualizar Resposta");
         visualizarButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 visualizarButtomActionPerformed(evt);
@@ -63,26 +66,30 @@ public class FlashCardTela extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(visualizarButtom)))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(visualizarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(visualizarButtom)
-                .addGap(7, 7, 7)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
-        proximoButtom.setBackground(new java.awt.Color(30, 180, 195));
-        proximoButtom.setText("proximo");
+        proximoButtom.setBackground(new java.awt.Color(238, 33, 82));
+        proximoButtom.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        proximoButtom.setForeground(new java.awt.Color(255, 255, 255));
+        proximoButtom.setText("Proximo Flashcard");
         proximoButtom.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         proximoButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,9 +97,10 @@ public class FlashCardTela extends javax.swing.JFrame {
             }
         });
 
-        voltarButtom.setBackground(new java.awt.Color(30, 180, 195));
-        voltarButtom.setText("voltar");
-        voltarButtom.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        voltarButtom.setBackground(new java.awt.Color(25, 194, 199));
+        voltarButtom.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+        voltarButtom.setText("Voltar");
+        voltarButtom.setBorder(null);
         voltarButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voltarButtomActionPerformed(evt);
@@ -104,25 +112,24 @@ public class FlashCardTela extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(219, 219, 219)
+                .addComponent(voltarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(111, 111, 111)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(proximoButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(voltarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(proximoButtom)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(voltarButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(proximoButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 119, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(voltarButtom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(proximoButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -148,7 +155,8 @@ public class FlashCardTela extends javax.swing.JFrame {
 
     private void voltarButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtomActionPerformed
         this.setVisible(false);
-        
+        InicioTela inicio = new InicioTela();
+        inicio.setVisible(true);      
     }//GEN-LAST:event_voltarButtomActionPerformed
 
     private void visualizarButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizarButtomActionPerformed

@@ -42,12 +42,13 @@ public class LoginTela extends javax.swing.JFrame {
         criarContaButton = new javax.swing.JButton();
         emailLabel = new javax.swing.JLabel();
         senhaLabel = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fundoPanel.setBackground(new java.awt.Color(255, 198, 76));
 
-        azulPanel.setBackground(new java.awt.Color(30, 180, 195));
+        azulPanel.setBackground(new java.awt.Color(25, 194, 199));
 
         emailTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         emailTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +65,8 @@ public class LoginTela extends javax.swing.JFrame {
         });
 
         entrarButton.setBackground(new java.awt.Color(238, 33, 82));
+        entrarButton.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        entrarButton.setForeground(new java.awt.Color(255, 255, 255));
         entrarButton.setText("ENTRAR");
         entrarButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         entrarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +76,8 @@ public class LoginTela extends javax.swing.JFrame {
         });
 
         criarContaButton.setBackground(new java.awt.Color(238, 33, 82));
+        criarContaButton.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        criarContaButton.setForeground(new java.awt.Color(255, 255, 255));
         criarContaButton.setText("CRIAR CONTA");
         criarContaButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         criarContaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -81,13 +86,13 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
 
+        emailLabel.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         emailLabel.setForeground(new java.awt.Color(255, 255, 255));
         emailLabel.setText("EMAIL");
-        emailLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        senhaLabel.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         senhaLabel.setForeground(new java.awt.Color(255, 255, 255));
         senhaLabel.setText("SENHA");
-        senhaLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout azulPanelLayout = new javax.swing.GroupLayout(azulPanel);
         azulPanel.setLayout(azulPanelLayout);
@@ -111,33 +116,48 @@ public class LoginTela extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(emailLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(senhaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(criarContaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
+        jPanel2.setBackground(new java.awt.Color(238, 33, 82));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 836, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 64, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout fundoPanelLayout = new javax.swing.GroupLayout(fundoPanel);
         fundoPanel.setLayout(fundoPanelLayout);
         fundoPanelLayout.setHorizontalGroup(
             fundoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(fundoPanelLayout.createSequentialGroup()
-                .addGap(304, 304, 304)
+                .addGap(234, 234, 234)
                 .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fundoPanelLayout.setVerticalGroup(
             fundoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fundoPanelLayout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
+            .addGroup(fundoPanelLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
                 .addComponent(azulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -256,6 +276,7 @@ public class LoginTela extends javax.swing.JFrame {
     private javax.swing.JTextField emailTextField;
     private javax.swing.JButton entrarButton;
     private javax.swing.JPanel fundoPanel;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.ButtonGroup loginbuttonGroup;
     private javax.swing.JLabel senhaLabel;
     private javax.swing.JPasswordField senhaPasswordField;

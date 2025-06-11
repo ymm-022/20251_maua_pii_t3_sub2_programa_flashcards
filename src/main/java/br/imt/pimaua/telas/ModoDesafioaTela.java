@@ -4,10 +4,6 @@
  */
 package br.imt.pimaua.telas;
 import javax.swing.JOptionPane;
-import java.util.List;
-
-import br.imt.pimaua.persistencia.FlashcardDAO;
-import br.imt.pimaua.Flashcard;
 
 /**
  *
@@ -22,7 +18,7 @@ private javax.swing.JButton ConfirmarButton;
      */
     public ModoDesafioaTela() {
        initComponents();
-       setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
 //        ConfirmarButton.setText("Começar desafio");
 //ConfirmarButton.addActionListener(evt -> {
 //    String dificuldade = (String) DificuldadeComboBox.getSelectedItem();
@@ -47,26 +43,41 @@ private javax.swing.JButton ConfirmarButton;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         AzulPanel = new javax.swing.JPanel();
         TituloLabel = new javax.swing.JLabel();
         DificuldadeComboBox = new javax.swing.JComboBox<>();
         confirmarButton = new javax.swing.JButton();
         VoltarButton = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+
+        jPanel2.setBackground(new java.awt.Color(238, 33, 82));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 770, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 64, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 198, 75));
 
-        AzulPanel.setBackground(new java.awt.Color(30, 180, 195));
+        AzulPanel.setBackground(new java.awt.Color(25, 194, 199));
         AzulPanel.setForeground(new java.awt.Color(30, 180, 195));
 
-        TituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TituloLabel.setFont(new java.awt.Font("Kristen ITC", 1, 24)); // NOI18N
         TituloLabel.setForeground(new java.awt.Color(255, 255, 255));
         TituloLabel.setText("MODO DE DESAFIO");
         TituloLabel.setMaximumSize(new java.awt.Dimension(180, 32));
 
-        DificuldadeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escolher dificuldade :", "Fácil", "Médio", "Difícil" }));
+        DificuldadeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Fácil", "Médio", "Difícil" }));
         DificuldadeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DificuldadeComboBoxActionPerformed(evt);
@@ -74,7 +85,9 @@ private javax.swing.JButton ConfirmarButton;
         });
 
         confirmarButton.setBackground(new java.awt.Color(238, 33, 82));
-        confirmarButton.setText("Confirmar");
+        confirmarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        confirmarButton.setForeground(new java.awt.Color(255, 255, 255));
+        confirmarButton.setText("Confirmar Dificuldade");
         confirmarButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         confirmarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,32 +99,32 @@ private javax.swing.JButton ConfirmarButton;
         AzulPanel.setLayout(AzulPanelLayout);
         AzulPanelLayout.setHorizontalGroup(
             AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AzulPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AzulPanelLayout.createSequentialGroup()
                 .addGroup(AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AzulPanelLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
+                        .addContainerGap(42, Short.MAX_VALUE)
                         .addComponent(TituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AzulPanelLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(confirmarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AzulPanelLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(DificuldadeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AzulPanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(confirmarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(DificuldadeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(35, 35, 35))
         );
         AzulPanelLayout.setVerticalGroup(
             AzulPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AzulPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(28, 28, 28)
                 .addComponent(TituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(DificuldadeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(confirmarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(DificuldadeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(confirmarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
-        VoltarButton.setBackground(new java.awt.Color(255, 198, 75));
+        VoltarButton.setBackground(new java.awt.Color(25, 194, 199));
+        VoltarButton.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         VoltarButton.setText("Voltar");
         VoltarButton.setBorderPainted(false);
         VoltarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -125,35 +138,52 @@ private javax.swing.JButton ConfirmarButton;
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VoltarButton)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(194, 194, 194)
                 .addComponent(AzulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(VoltarButton)
-                .addGap(18, 18, 18)
-                .addComponent(AzulPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(39, 39, 39))
+                .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(AzulPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(238, 33, 82));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 788, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 64, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 344, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 269, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 444, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         pack();
@@ -172,30 +202,13 @@ private javax.swing.JButton ConfirmarButton;
     }//GEN-LAST:event_VoltarButtonActionPerformed
 
     private void confirmarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarButtonActionPerformed
-    
-    // Pega a dificuldade selecionada no ComboBox
-    String dificuldade = DificuldadeComboBox.getSelectedItem().toString();
-
-    // Chama o DAO pra buscar os flashcards
-    FlashcardDAO dao = new FlashcardDAO();
-    List<Flashcard> flashcards = dao.buscarPorDificuldade(dificuldade);
-
-    // Verifica se encontrou algo
-    if (flashcards.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Nenhum flashcard encontrado para essa dificuldade.");
-    } else {
-        // Abre a JogoTela com os flashcards
-        JogoTela jogo = new JogoTela(flashcards); // cria e mostra a tela de jogo
-jogo.setVisible(true);
 
     }//GEN-LAST:event_confirmarButtonActionPerformed
-    }
+
     /**
      * @param args the command line arguments
      */
-   public static void main(String[] args) {
-
-
+           public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -237,5 +250,7 @@ jogo.setVisible(true);
     private javax.swing.JButton VoltarButton;
     private javax.swing.JButton confirmarButton;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
